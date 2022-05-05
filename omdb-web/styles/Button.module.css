@@ -1,0 +1,9 @@
+.button{
+    display: flex;
+    background-color: #ff8300;
+    border-radius: 15px;
+    border: none;
+    box-shadow: #ff8300;
+    color: #fff;
+    padding: 20px 64px ;
+}
