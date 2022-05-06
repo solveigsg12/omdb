@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 
+
 import styles from "../../styles/Movie.module.css";
 import Button from "../Button";
+import MovieDetails from "./MovieDetails";
 
 export default function Movie() {
   const [movieTitle, setMovieTitle] = useState("");
   const [movieInfo, setMovieInfo] = useState([]);
-  const [inputValue, setInputValue] = useState("Search your movie here");
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     fetch(
@@ -26,6 +28,8 @@ console.log(movieInfo, " hvad er movie info", movieTitle, " movie title", inputV
   return (
     <div className={styles.container}>
 
+    <div className={styles.searchcontainer}>
+
       <input
       className={styles.inputField}
         type="text"
@@ -34,8 +38,11 @@ console.log(movieInfo, " hvad er movie info", movieTitle, " movie title", inputV
         placeholder="Search for movies or episodes"
         onChange={(event) => setInputValue(event.target.value)}
         
-      ></input>
+      >
+      </input>
       <Button onClick={() => setMovieTitle(inputValue)}>Try it out</Button>
+    </div>
+    <MovieDetails movieInfo={movieInfo} />
 
     </div>
   );

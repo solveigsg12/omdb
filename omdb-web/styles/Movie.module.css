@@ -1,5 +1,10 @@
 .container {
     display: flex;
+    flex-direction: column;
+}
+
+.searchcontainer {
+    display: flex;
     flex-direction: row;
     margin: 20px;
     
@@ -13,6 +18,5 @@
     border: 0 solid #A0A0A0;
     -webkit-box-shadow: 0 5px 20px -5px rgba(0,0,0,.07);
     box-shadow: 0 5px 20px -5px rgba(0,0,0,.3);    ;
-
 
 }
