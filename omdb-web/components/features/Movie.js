@@ -1,29 +1,42 @@
 import React, { useEffect, useState } from "react";
 
-import Button from '../Button'
-
+import styles from "../../styles/Movie.module.css";
+import Button from "../Button";
 
 export default function Movie() {
-    const [movieTitle, setMovieTitle] = useState("lucky+number+slevin");
-    const [movieInfo, setMovieInfo] = useState([]);
-  
-    useEffect(() => {
-        fetch(`http://www.omdbapi.com/?apikey=aa7c9259&t=${movieTitle}&plot=full&r=json`)
-          .then((res) => res.json())
-          .then(
-            (data) => {
-              setMovieInfo(data);
-            },
-            (error) => {
-              console.log(error);
-            }
-          );
-      }, [movieTitle]);
+  const [movieTitle, setMovieTitle] = useState("");
+  const [movieInfo, setMovieInfo] = useState([]);
+  const [inputValue, setInputValue] = useState("Search your movie here");
 
+  useEffect(() => {
+    fetch(
+      `http://www.omdbapi.com/?apikey=aa7c9259&t=${movieTitle}&plot=full&r=json`
+    )
+      .then((res) => res.json())
+      .then(
+        (data) => {
+          setMovieInfo(data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  }, [movieTitle]);
+console.log(movieInfo, " hvad er movie info", movieTitle, " movie title", inputValue, " inputvalue")
   return (
-    <div >
+    <div className={styles.container}>
+
+      <input
+      className={styles.inputField}
+        type="text"
+        id={"movieInputSearch"}
+        value={inputValue}
+        placeholder="Search for movies or episodes"
+        onChange={(event) => setInputValue(event.target.value)}
         
-      <Button onClick={()=> console.log("hellooo")}>Try it out</Button>
+      ></input>
+      <Button onClick={() => setMovieTitle(inputValue)}>Try it out</Button>
+
     </div>
   );
 }

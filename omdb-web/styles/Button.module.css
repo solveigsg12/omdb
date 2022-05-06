@@ -3,7 +3,9 @@
     background-color: #ff8300;
     border-radius: 15px;
     border: none;
-    box-shadow: #ff8300;
+    box-shadow: ;
+    -webkit-box-shadow: 0 5px 20px -5px #ff8300;
+    box-shadow: 0 5px 20px -5px rgba(0,0,0,.3);    ;
     color: #fff;
-    padding: 20px 64px ;
+    padding: 15px 64px ;
 }
