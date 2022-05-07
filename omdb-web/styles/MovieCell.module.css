@@ -1,0 +1,17 @@
+.container {
+    margin:20px;
+    border-left: thick solid rgba(0,0,0,.2); 
+    padding: 10px;
+
+}
+
+.title {
+    font-weight: 500;
+    font-size: 20px;
+    padding-bottom: 6px;
+
+}
+.value{
+    font-weight: 300;
+    font-size: 16px;
+}
