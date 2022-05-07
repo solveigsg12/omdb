@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; 
+
+    margin-bottom: 60px;
+}
+
+.largeText {
+    font-size: 4rem;
+    font-weight: 600;
+}
+.image {
+    max-width: 50rem;
+    width: 100%;
+    
+  }
+.smallText {
+    font-size: 30px;
+    font-weight: 300;
+    color:#8795a1;
+    padding-top: 20px;
+    max-width: 40rem;
+    
+}
+  .orange {
+      color: #ff8300;
+  }
