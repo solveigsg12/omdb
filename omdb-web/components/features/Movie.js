@@ -24,7 +24,7 @@ export default function Movie() {
         }
       );
   }, [movieTitle]);
-console.log(movieInfo, " hvad er movie info", movieTitle, " movie title", inputValue, " inputvalue")
+
   return (
     <div className={styles.container}>
 
