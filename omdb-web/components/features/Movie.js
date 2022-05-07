@@ -42,7 +42,8 @@ console.log(movieInfo, " hvad er movie info", movieTitle, " movie title", inputV
       </input>
       <Button onClick={() => setMovieTitle(inputValue)}>Try it out</Button>
     </div>
-    <MovieDetails movieInfo={movieInfo} />
+
+    {movieInfo.Response === "True" && <MovieDetails movieInfo={movieInfo} />}
 
     </div>
   );

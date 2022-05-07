@@ -1,9 +1,14 @@
 .container {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 50%;
+    justify-content: space-between;
+    padding: 20px;
+    border: 0 solid #A0A0A0;
+    -webkit-box-shadow: 0 5px 20px -5px rgba(0,0,0,.07);
+    box-shadow: 0 5px 20px -5px rgba(0,0,0,.3);   
 }
 
-.textInfoContainer {
-    width: 60%;
+.image {
+    max-height: 444px;
 }

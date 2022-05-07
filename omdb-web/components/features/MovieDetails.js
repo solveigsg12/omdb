@@ -11,9 +11,11 @@ export default function MovieDetails(props) {
         <MovieCell title={"Actors"} value={props.movieInfo.Actors}/>
         <MovieCell title={"Year of release"} value={props.movieInfo.Released}/>
         <MovieCell title={"Runtime"} value={props.movieInfo.Runtime}/>
-      </div>
 
-      <img src={props.movieInfo.Poster}></img>
+       {props.movieInfo.Ratings && props.movieInfo.Ratings.length > 0 && <MovieCell title={"Ratings"} value={props.movieInfo.Ratings[0].Value }/>}
+
+      </div>
+      <img className={styles.image} src={props.movieInfo.Poster}></img>
     </div>
   );
 }
