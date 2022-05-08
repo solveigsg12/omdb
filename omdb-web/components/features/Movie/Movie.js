@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router'
 
 import styles from '../../../styles/Movie.module.css';
 import MovieCard from './MovieCard';
@@ -6,6 +7,8 @@ import MovieCard from './MovieCard';
 export default function Movie() {
   const [movieSearch, setMovieSearch] = useState({});
   const [inputValue, setInputValue] = useState('');
+  const router = useRouter()
+
 
   useEffect(() => {
     if(inputValue.length > 2){
@@ -34,10 +37,9 @@ export default function Movie() {
           onChange={(event) => setInputValue(event.target.value)}
         ></input>
       </div>
-
       {movieSearch.Response === 'True' &&
         movieSearch.Search.map((movie) => {
-          return  <MovieCard movieInfo={movie} key={movie.imdbID}/>;
+          return  <MovieCard movieInfo={movie} key={movie.imdbID} onClick={() => router.push(`/movieDetail?imdbId=${movie.imdbID}`)} isSearchMode={true}/>;
         })}
     </div>
   );

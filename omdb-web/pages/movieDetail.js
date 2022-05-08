@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import MovieCell from '../components/features/Movie/MovieCell';
+
+import MovieCard from '../components/features/Movie/MovieCard';
+import styles from "../styles/MovieDetails.module.css";
 
 export default function MovieSearch() {
     const router = useRouter();
@@ -22,28 +24,15 @@ export default function MovieSearch() {
           );
       }, []);
       return (
-          <div>
-             { movieInfo.Poster && <Image       
-                src={movieInfo.Poster}
-                alt="Poster picturer"
-                width={100}
-                height={100}
-                layout="responsive"
+          <div className={styles.container}>
+        <MovieCard
+            movieInfo={movieInfo}
+            isSearchMode={false}
+            imageWidth={500}
+            imageHeight={450}
+        />
+          </div>
 
-      />}
-            <MovieCell title={"Title"} value={movieInfo.Title}/>
-              <MovieCell title={"Year"} value={movieInfo.Year}/>
-              <MovieCell title={"Released"} value={movieInfo.Released}/>
-              <MovieCell title={"Runtime"} value={movieInfo.Runtime}/>
-              <MovieCell title={"Genre"} value={movieInfo.Genre}/>
-              <MovieCell title={"Director"} value={movieInfo.Director}/>
-              <MovieCell title={"Actors"} value={movieInfo.Actors}/>
-              <MovieCell title={"Plot"} value={movieInfo.Plot}/>
-              <MovieCell title={"Language"} value={movieInfo.Language}/>
-              <MovieCell title={"Country"} value={movieInfo.Country}/>
-              <MovieCell title={"Awards"} value={movieInfo.Awards}/>
-              <MovieCell title={"imdbRating"} value={movieInfo.imdbRating}/>
-              <MovieCell title={"imdbVotes"} value={movieInfo.imdbVotes}/>
-              </div>
+
       )
 }
