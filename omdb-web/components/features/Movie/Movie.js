@@ -31,7 +31,6 @@ export default function Movie() {
         );
     }
   }, [inputValue]);
-  console.log(errorMessage, ' hvad er errormessage');
   return (
     <div className={styles.container}>
       <div className={styles.searchcontainer}>
