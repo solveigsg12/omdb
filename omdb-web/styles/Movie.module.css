@@ -28,6 +28,10 @@
     max-width: 55%;
     width: 100%;
 }
+.errorMessage {
+    font-size: 3rem;
+    font-weight: 600;
+}
 
 @media (max-width: 900px) {
     .searchcontainer {
@@ -39,6 +43,10 @@
     .movieCardContainer {
         max-width: 100%;
         width: 100%;
+    }
+    .errorMessage {
+        font-size: 2rem;
+        font-weight: 600;
     }
 
 }

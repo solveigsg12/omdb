@@ -18,9 +18,6 @@
     .container{
         flex-direction: column-reverse;
     }
-    .searchcontainer {
-        width: 90%;
-    } 
     .textInfoContainer {
         max-width: 100%;
         width: 100%;

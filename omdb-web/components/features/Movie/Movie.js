@@ -5,9 +5,11 @@ import styles from '../../../styles/Movie.module.css';
 import MovieCard from './MovieCard';
 
 export default function Movie() {
+  const router = useRouter();
   const [movieSearch, setMovieSearch] = useState({});
   const [inputValue, setInputValue] = useState('');
-  const router = useRouter();
+  const [errorMessage, setErrorMessage] = useState('');
+  
 
   useEffect(() => {
     if (inputValue.length >= 2) {
@@ -17,10 +19,17 @@ export default function Movie() {
         .then((res) => res.json())
         .then(
           (data) => {
-            setMovieSearch(data);
+            if(data.Response === "True")
+            {
+              setMovieSearch(data);
+
+            }
+            else {
+              setErrorMessage("Sorry, something went wrong. Please try again.")
+            }
           },
           (error) => {
-            console.log(error);
+            setErrorMessage("Sorry, something went wrong. Please try again.")
           }
         );
     }
@@ -37,7 +46,7 @@ export default function Movie() {
           onChange={(event) => setInputValue(event.target.value)}
         ></input>
       </div>
-      {movieSearch.Response === 'True' &&
+      {movieSearch && movieSearch.Response === 'True' ?
         movieSearch.Search.map((movie) => {
           return (
             <div className={styles.movieCardContainer} key={movie.imdbID}>
@@ -51,7 +60,7 @@ export default function Movie() {
               ;
             </div>
           );
-        })}
+        }): <div className={styles.errorMessage}>{errorMessage}</div>}
     </div>
   );
 }

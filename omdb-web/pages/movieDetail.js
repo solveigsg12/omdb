@@ -7,6 +7,7 @@ import styles from '../styles/MovieDetails.module.css';
 export default function MovieSearch() {
   const router = useRouter();
   const [movieInfo, setMovieInfo] = useState({});
+  const [errorMessage, setErrorMessage] = useState('');
   const { imdbId } = router.query;
   useEffect(() => {
     fetch(
@@ -15,21 +16,33 @@ export default function MovieSearch() {
       .then((res) => res.json())
       .then(
         (data) => {
-          setMovieInfo(data);
+            if(data.Response === "True")
+            {
+                setMovieInfo(data);
+
+            }          
+             else {
+            setErrorMessage('Sorry, something went wrong. Please try again.');
+          }
         },
         (error) => {
-          console.log(error);
+          setErrorMessage('Sorry, something went wrong. Please try again.');
         }
       );
   }, []);
+  console.log(movieInfo && movieInfo.Response !== 'True', ' hvad er lengt_');
   return (
     <div className={styles.container}>
-      <MovieCard
-        movieInfo={movieInfo}
-        isSearchMode={false}
-        imageWidth={450}
-        imageHeight={500}
-      />
+      {movieInfo && movieInfo.Response === 'True' ? (
+        <MovieCard
+          movieInfo={movieInfo}
+          isSearchMode={false}
+          imageWidth={450}
+          imageHeight={500}
+        />
+      ) : (
+        <div className={styles.errorMessage}>{errorMessage}</div>
+      )}
     </div>
   );
 }
