@@ -9,7 +9,6 @@ export default function Movie() {
   const [movieSearch, setMovieSearch] = useState({});
   const [inputValue, setInputValue] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  
 
   useEffect(() => {
     if (inputValue.length >= 2) {
@@ -19,21 +18,20 @@ export default function Movie() {
         .then((res) => res.json())
         .then(
           (data) => {
-            if(data.Response === "True")
-            {
+            if (data.Response === 'True') {
               setMovieSearch(data);
-
-            }
-            else {
-              setErrorMessage("Sorry, something went wrong. Please try again.")
+            } else {
+              setErrorMessage('Sorry, something went wrong. Please try again.');
             }
           },
           (error) => {
-            setErrorMessage("Sorry, something went wrong. Please try again.")
+            error &&
+              setErrorMessage('Sorry, something went wrong. Please try again.');
           }
         );
     }
   }, [inputValue]);
+  console.log(errorMessage, ' hvad er errormessage');
   return (
     <div className={styles.container}>
       <div className={styles.searchcontainer}>
@@ -46,7 +44,8 @@ export default function Movie() {
           onChange={(event) => setInputValue(event.target.value)}
         ></input>
       </div>
-      {movieSearch && movieSearch.Response === 'True' ?
+      {movieSearch &&
+        movieSearch.Response === 'True' &&
         movieSearch.Search.map((movie) => {
           return (
             <div className={styles.movieCardContainer} key={movie.imdbID}>
@@ -60,7 +59,10 @@ export default function Movie() {
               ;
             </div>
           );
-        }): <div className={styles.errorMessage}>{errorMessage}</div>}
+        })}
+      {errorMessage.length > 0 && (
+        <div className={styles.errorMessage}>{errorMessage}</div>
+      )}
     </div>
   );
 }

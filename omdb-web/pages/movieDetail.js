@@ -16,12 +16,10 @@ export default function MovieSearch() {
       .then((res) => res.json())
       .then(
         (data) => {
-            if(data.Response === "True")
-            {
-                setMovieInfo(data);
-
-            }          
-             else {
+          if (data.Response === 'True') {
+            setMovieInfo(data);
+            setErrorMessage("");
+          } else {
             setErrorMessage('Sorry, something went wrong. Please try again.');
           }
         },

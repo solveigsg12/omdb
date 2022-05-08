@@ -1,53 +1,50 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
 .largeText {
-    font-size: 4rem;
-    font-weight: 600;
+  font-size: 4rem;
+  font-weight: 600;
 }
 .image {
-    width: 100%;
-  }
+  width: 100%;
+}
 
 #watch-movie {
-    width: max-content;
+  width: max-content;
 }
 .smallText {
-    font-size: 30px;
-    font-weight: 300;
-    color:#8795a1;
-    padding-top: 20px;
-    max-width: 40rem;
-    
+  font-size: 30px;
+  font-weight: 300;
+  color: #8795a1;
+  padding-top: 20px;
+  max-width: 40rem;
 }
-  .orange {
-      color: #ff8300;
+.orange {
+  color: #ff8300;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column-reverse;
   }
-
-  @media (max-width: 900px) {
-    .container{
-        flex-direction: column-reverse;
-    }
-    .largeText {
-        font-size: 3rem;
-    }
-    .smallText {
-        font-size: 1.5rem;
-    }
-
-
+  .largeText {
+    font-size: 3rem;
   }
+  .smallText {
+    font-size: 1.5rem;
+  }
+}
 
-  @media (max-width: 600px) {
-    .largeText {
-        font-size: 2rem;
-    }
-    .smallText {
-        font-size: 1rem;
-    }
+@media (max-width: 600px) {
+  .largeText {
+    font-size: 2rem;
+  }
+  .smallText {
+    font-size: 1rem;
+  }
 }

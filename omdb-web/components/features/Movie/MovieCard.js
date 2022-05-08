@@ -34,13 +34,12 @@ export default function MovieDetails(props) {
       {props.movieInfo.Poster !== 'N/A' &&
       props.movieInfo.Poster !== undefined ? (
         <div className={styles.imageContainer}>
-
-        <Image
-          src={props.movieInfo.Poster}
-          alt="Poster picturer"
-          width={props.imageWidth || 250}
-          height={props.imageHeight || 300}
-        />
+          <Image
+            src={props.movieInfo.Poster}
+            alt="Poster picturer"
+            width={props.imageWidth || 250}
+            height={props.imageHeight || 300}
+          />
         </div>
       ) : (
         <div />

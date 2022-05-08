@@ -1,16 +1,15 @@
 .container {
-    padding: 30px;
+  padding: 30px;
 }
 
 .errorMessage {
-    font-size: 3rem;
-    font-weight: 600;
+  font-size: 3rem;
+  font-weight: 600;
 }
 
 @media (max-width: 900px) {
-    .errorMessage {
-        font-size: 2rem;
-        font-weight: 600;
-    }
-
+  .errorMessage {
+    font-size: 2rem;
+    font-weight: 600;
+  }
 }

@@ -1,11 +1,11 @@
-.button{
-    display: flex;
-    background-color: #ff8300;
-    border-radius: 15px;
-    border: none;
-    -webkit-box-shadow: 0 5px 20px -5px #ff8300;
-    box-shadow: 0 5px 20px -5px rgba(0,0,0,.3);    ;
-    color: #fff;
-    padding: 15px 64px ;
-    font-size: 18px;
+.button {
+  display: flex;
+  background-color: #ff8300;
+  border-radius: 15px;
+  border: none;
+  -webkit-box-shadow: 0 5px 20px -5px #ff8300;
+  box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 15px 64px;
+  font-size: 18px;
 }
