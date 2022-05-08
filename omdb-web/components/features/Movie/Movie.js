@@ -13,7 +13,7 @@ export default function Movie() {
   useEffect(() => {
     if (inputValue.length >= 2) {
       fetch(
-        `http://www.omdbapi.com/?apikey=aa7c9259&s=${inputValue}&plot=full&r=json`
+        `https://www.omdbapi.com/?apikey=aa7c9259&s=${inputValue}&plot=full&r=json`
       )
         .then((res) => res.json())
         .then(
