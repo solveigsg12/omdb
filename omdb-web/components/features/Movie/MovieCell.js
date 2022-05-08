@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../../styles/MovieCell.module.css';
+import styles from '../../../styles/MovieCell.module.css';
 
 export default function MovieCell(props) {
   return (

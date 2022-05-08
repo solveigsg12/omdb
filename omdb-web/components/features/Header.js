@@ -22,10 +22,10 @@ export default function Header() {
   return (
     <div className={styles.container}>
       <div className={styles.largeText}>
-        Welcome to Moongle, where you can find{' '}
+        Welcome to Moogle, where you can find{' '}
         <span className={styles.orange}>movies</span> and{' '}
         <span className={styles.orange}>episodes </span> 
-        <div className={styles.smallText}>try it out by type in a movie or episoeds in the search bar below. Kind of like google</div>
+        <div className={styles.smallText}>Try it out by typeing in a movie or episoeds in the search bar below. Kind of like google</div>
 
       </div>
       <div className={styles.image}>
