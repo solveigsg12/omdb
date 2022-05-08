@@ -30,7 +30,7 @@ export default function MovieSearch() {
         }
       );
   }, []);
-  console.log(movieInfo && movieInfo.Response !== 'True', ' hvad er lengt_');
+
   return (
     <div className={styles.container}>
       {movieInfo && movieInfo.Response === 'True' ? (
