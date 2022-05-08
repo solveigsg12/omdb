@@ -1,26 +1,49 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .searchcontainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 20px;
-    width: 70%;
-
-    
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 60px 20px;
+  width: 55%;
 }
 .inputField {
-    margin-right: 12px;
-    padding-left: 40px;
-    border-radius: 15px;
-    width: 70%;
-    border: 0 solid #A0A0A0;
-    -webkit-box-shadow: 0 5px 20px -5px rgba(0,0,0,.07);
-    box-shadow: 0 5px 20px -5px rgba(0,0,0,.3);    
+  margin-right: 12px;
+  padding-left: 40px;
+  border-radius: 15px;
+  width: 100%;
+  padding: 20px;
+  font-size: 20px;
+  border: 0 solid #a0a0a0;
+  -webkit-box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.3);
+}
+.movieCardContainer {
+  max-width: 55%;
+  width: 100%;
+}
+.errorMessage {
+  font-size: 3rem;
+  font-weight: 600;
+}
 
+@media (max-width: 900px) {
+  .searchcontainer {
+    width: 90%;
+  }
+  .inputField {
+    font-size: 1rem;
+  }
+  .movieCardContainer {
+    max-width: 100%;
+    width: 100%;
+  }
+  .errorMessage {
+    font-size: 2rem;
+    font-weight: 600;
+  }
 }

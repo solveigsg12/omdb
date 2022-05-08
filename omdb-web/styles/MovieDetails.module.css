@@ -1,14 +1,15 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-    justify-content: space-between;
-    padding: 20px;
-    border: 0 solid #A0A0A0;
-    -webkit-box-shadow: 0 5px 20px -5px rgba(0,0,0,.07);
-    box-shadow: 0 5px 20px -5px rgba(0,0,0,.3);   
+  padding: 30px;
 }
 
-.image {
-    max-height: 444px;
+.errorMessage {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .errorMessage {
+    font-size: 2rem;
+    font-weight: 600;
+  }
 }
