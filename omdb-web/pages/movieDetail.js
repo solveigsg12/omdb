@@ -11,7 +11,7 @@ export default function MovieSearch() {
   const { imdbId } = router.query;
   useEffect(() => {
     fetch(
-      `http://www.omdbapi.com/?apikey=aa7c9259&i=${imdbId}&plot=full&r=json`
+      `https://www.omdbapi.com/?apikey=aa7c9259&i=${imdbId}&plot=full&r=json`
     )
       .then((res) => res.json())
       .then(
@@ -19,9 +19,7 @@ export default function MovieSearch() {
           if (data.Response === 'True') {
             setMovieInfo(data);
             setErrorMessage("");
-          } else {
-            setErrorMessage('Sorry, something went wrong. Please try again.');
-          }
+          } 
         },
         (error) => {
           setErrorMessage('Sorry, something went wrong. Please try again.');

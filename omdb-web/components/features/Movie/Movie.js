@@ -20,8 +20,6 @@ export default function Movie() {
           (data) => {
             if (data.Response === 'True') {
               setMovieSearch(data);
-            } else {
-              setErrorMessage('Sorry, something went wrong. Please try again.');
             }
           },
           (error) => {
@@ -44,7 +42,7 @@ export default function Movie() {
         ></input>
       </div>
       {movieSearch &&
-        movieSearch.Response === 'True' &&
+        movieSearch.Response === 'True' ?
         movieSearch.Search.map((movie) => {
           return (
             <div className={styles.movieCardContainer} key={movie.imdbID}>
@@ -58,10 +56,9 @@ export default function Movie() {
               ;
             </div>
           );
-        })}
-      {errorMessage.length > 0 && (
-        <div className={styles.errorMessage}>{errorMessage}</div>
-      )}
+        }): <div className={styles.errorMessage}>{errorMessage}</div>
+      }
+
     </div>
   );
 }
