@@ -16,3 +16,13 @@
     padding-bottom: 3px;
 
 }
+
+@media (max-width: 600px) {
+    .value {
+        font-size: 16px;
+    } 
+    .title {
+        font-size: 14px
+    }
+
+}

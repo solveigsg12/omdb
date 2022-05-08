@@ -4,8 +4,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px; 
-
-    margin-bottom: 60px;
 }
 
 .largeText {
@@ -13,10 +11,12 @@
     font-weight: 600;
 }
 .image {
-    max-width: 50rem;
     width: 100%;
-    
   }
+
+#watch-movie {
+    width: max-content;
+}
 .smallText {
     font-size: 30px;
     font-weight: 300;
@@ -28,3 +28,26 @@
   .orange {
       color: #ff8300;
   }
+
+  @media (max-width: 900px) {
+    .container{
+        flex-direction: column-reverse;
+    }
+    .largeText {
+        font-size: 3rem;
+    }
+    .smallText {
+        font-size: 1.5rem;
+    }
+
+
+  }
+
+  @media (max-width: 600px) {
+    .largeText {
+        font-size: 2rem;
+    }
+    .smallText {
+        font-size: 1rem;
+    }
+}

@@ -11,3 +11,19 @@
 .textInfoContainer{
     max-width: 50%;
 }
+
+
+
+@media (max-width: 600px) {
+    .container{
+        flex-direction: column-reverse;
+    }
+    .searchcontainer {
+        width: 90%;
+    } 
+    .textInfoContainer {
+        max-width: 100%;
+        width: 100%;
+    }
+
+}
