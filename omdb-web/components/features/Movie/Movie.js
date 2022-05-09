@@ -11,7 +11,7 @@ export default function Movie() {
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    if (inputValue.length >= 2) {
+    if (inputValue.length > 2) {
       fetch(
         `https://www.omdbapi.com/?apikey=aa7c9259&s=${inputValue}&plot=full&r=json`
       )
@@ -21,12 +21,21 @@ export default function Movie() {
             if (data.Response === 'True') {
               setMovieSearch(data);
             }
+            else if(data.Response === "False" ){
+              setMovieSearch({});
+              setErrorMessage('Sorry, no matches found');
+            }
           },
           (error) => {
             error &&
               setErrorMessage('Sorry, something went wrong. Please try again.');
           }
         );
+    }
+    else {
+      setErrorMessage("");
+      setMovieSearch({});
+
     }
   }, [inputValue]);
   return (

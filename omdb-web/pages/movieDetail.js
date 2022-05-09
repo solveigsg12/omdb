@@ -20,6 +20,10 @@ export default function MovieSearch() {
             setMovieInfo(data);
             setErrorMessage("");
           } 
+          else if(data.Response === "False" ){
+            setMovieSearch({});
+            setErrorMessage('Sorry, no matches found');
+          }
         },
         (error) => {
           setErrorMessage('Sorry, something went wrong. Please try again.');
