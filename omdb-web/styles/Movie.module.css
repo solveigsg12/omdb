@@ -21,11 +21,15 @@
   border: 0 solid #a0a0a0;
   -webkit-box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.07);
   box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.3);
+  outline-color: #ff8300;
 }
+
 .movieCardContainer {
   max-width: 55%;
   width: 100%;
+
 }
+
 .errorMessage {
   font-size: 3rem;
   font-weight: 600;

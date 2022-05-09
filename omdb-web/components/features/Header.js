@@ -26,8 +26,8 @@ export default function Header() {
         <span className={styles.orange}>movies</span> and{' '}
         <span className={styles.orange}>episodes </span>
         <div className={styles.smallText}>
-          Try it out by typeing in a movie or episoeds in the search bar below.
-          Kind of like google
+          Search any movie or episode and get relevant information about them.
+          Kind of like Google.
         </div>
       </div>
       <div className={styles.image}>

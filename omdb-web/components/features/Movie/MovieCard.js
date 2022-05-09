@@ -6,8 +6,9 @@ import styles from '../../../styles/MovieCard.module.css';
 import MovieCell from './MovieCell';
 
 export default function MovieDetails(props) {
+  const containerStyles = props.isSearchMode ? styles.hoverStateContainer : styles.container; 
   return (
-    <div className={styles.container} onClick={props.onClick}>
+    <div className={containerStyles} onClick={props.onClick}>
       {props.isSearchMode ? (
         <div className={styles.textInfoContainer}>
           <MovieCell title={'Title'} value={props.movieInfo.Title} />
