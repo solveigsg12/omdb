@@ -1,4 +1,4 @@
-# omdb
+# Moogle - omdb open api
 
 Hi wlecome to Moogle, where you can search movies and episodes. 
 
