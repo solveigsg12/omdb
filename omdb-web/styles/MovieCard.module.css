@@ -21,7 +21,7 @@
 }
 
 @media (max-width: 600px) {
-  .container {
+  .container, .hoverStateContainer {
     flex-direction: column-reverse;
   }
   .textInfoContainer {
