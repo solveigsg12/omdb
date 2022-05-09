@@ -62,7 +62,6 @@ export default function Movie() {
                 }
                 isSearchMode={true}
               />
-              ;
             </div>
           );
         }): <div className={styles.errorMessage}>{errorMessage}</div>
